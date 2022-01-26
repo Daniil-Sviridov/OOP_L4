@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace OOP_L4
+﻿
+namespace ConstructionInstallationManagement
 {
     public class Building
     {
@@ -12,7 +7,7 @@ namespace OOP_L4
 
         static Building()
         {
-            nextuid = DateTime.Today.Millisecond;
+            nextuid = DateTime.Now.Millisecond;
         }
 
         public Building( int height,  int storey, int entrances, int rooms,  string name = "")
@@ -68,6 +63,11 @@ namespace OOP_L4
         public int GetRoomInyStorey()
         {
             return GetRoomInEntrances() / _storey;
+        }
+
+        public override string ToString()
+        {
+            return $"{_uid} Квартир {_rooms} высота {_height} подъездов {_entrances}";
         }
     }
 }
