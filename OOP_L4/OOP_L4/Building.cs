@@ -22,6 +22,7 @@ namespace OOP_L4
 
             _name = name;
             _height = height;
+            _storey = storey;
             _entrances = entrances;
             _rooms = rooms;
 
@@ -41,5 +42,32 @@ namespace OOP_L4
         private int _storey;
         private int _rooms;
         private int _entrances;
+
+        /// <summary>
+        /// Получить высоту этажа здания.
+        /// </summary>
+        /// <returns>double</returns>
+        public double GetHeightStorey()
+        {
+            return _height/_storey;
+        }
+
+        /// <summary>
+        /// Получить Количество квартир в подъезде
+        /// </summary>
+        /// <returns>double</returns>
+        public int GetRoomInEntrances()
+        {
+            return _rooms / _entrances;
+        }
+
+        /// <summary>
+        /// Получить Количество квартир в подъезде
+        /// </summary>
+        /// <returns>double</returns>
+        public int GetRoomInyStorey()
+        {
+            return GetRoomInEntrances() / _storey;
+        }
     }
 }
