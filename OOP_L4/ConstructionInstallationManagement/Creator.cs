@@ -1,11 +1,15 @@
 ﻿namespace ConstructionInstallationManagement
 {
-    public static class Creator
+    public class Creator : Building    
     {
-        public static Building CreateBilding(int height, int storey, int entrances, int rooms, string name = "")
-        {
+        protected Creator()
+        { 
+        }
 
-            return new Building( height, storey, entrances, rooms);
+        public static Building NewBuilding(int height, int storey, int entrances, int rooms, string name = "")
+        {
+            
+            return New(height, storey, entrances, rooms, name);
         }
     }
 }

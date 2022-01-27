@@ -10,8 +10,13 @@ namespace ConstructionInstallationManagement
             nextuid = DateTime.Now.Millisecond;
         }
 
-        public Building( int height,  int storey, int entrances, int rooms,  string name = "")
-        { 
+        private protected Building()
+        {
+            _uid = GetNewUID();
+        }
+
+        private protected Building(int height, int storey, int entrances, int rooms, string name = "")
+        {
             _uid = GetNewUID();
             _version = 0;
 
@@ -22,6 +27,12 @@ namespace ConstructionInstallationManagement
             _rooms = rooms;
 
         }
+
+        protected static Building New(int height, int storey, int entrances, int rooms, string name = "")
+        {
+            return new Building( height, storey,  entrances,  rooms, name);
+        }
+
 
         private int GetNewUID()
         {
@@ -44,7 +55,7 @@ namespace ConstructionInstallationManagement
         /// <returns>double</returns>
         public double GetHeightStorey()
         {
-            return _height/_storey;
+            return _height / _storey;
         }
 
         /// <summary>
