@@ -17,8 +17,7 @@ namespace ConstructionInstallationManagement
 
         private protected Building(int height, int storey, int entrances, int rooms, string name = "")
         {
-            _uid = GetNewUID();
-            _version = 0;
+            _uid = GetNewUID();  
 
             _name = name;
             _height = height;
@@ -42,7 +41,6 @@ namespace ConstructionInstallationManagement
 
 
         private int _uid;
-        private int _version;
         private string _name;
         private int _height;
         private int _storey;
